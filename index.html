@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InnovateX - Tech for the Future</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0057A0;
+            /* Custom Blue */
+            --secondary-color: #00B894;
+            /* Teal */
+            --accent-color: #FFC107;
+            /* Amber */
+            --dark-color: #1B1F22;
+            /* Custom dark */
+            --light-color: #F4F7F9;
+            /* Light gray */
+            --text-color: #333333;
+        }
+
+        .poppins-thin {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .poppins-extralight {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .poppins-black {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .poppins-thin-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        .poppins-extralight-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: italic;
+        }
+
+        .poppins-light-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .poppins-regular-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .poppins-medium-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .poppins-semibold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .poppins-bold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .poppins-extrabold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .poppins-black-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+
+        body {
+            scroll-behavior: smooth;
+            background-color: var(--light-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar */
+        .navbar-dark.bg-dark {
+            background-color: var(--dark-color) !important;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('assets/images/tech.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* stronger dark overlay */
+            z-index: 1;
+        }
+
+        .hero .container {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero p {
+            color: #fff;
+        }
+
+        .hero .btn {
+            padding: 10px 25px;
+            font-size: 1.1rem;
+        }
+
+        .hero .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #003f75;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #009874;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 80px 20px;
+        }
+
+        #products,
+        #testimonials {
+            background-color: var(--light-color);
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+        }
+
+        .card-custom {
+            transition: transform 0.3s;
+            background-color: white;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Icons and Text Colors */
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .text-success {
+            color: var(--secondary-color) !important;
+        }
+
+        .text-warning {
+            color: var(--accent-color) !important;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body class="poppins-regular">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">InnovateX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Get Involved</a></li>
+                    <button class="btn btn-primary me-2">Login</button>
+                    <button class="btn btn-success">Register</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center text-white" id="home">
+        <div class="overlay"></div>
+        <div class="container text-center position-relative">
+            <h1>Building Tech for Tomorrow</h1>
+            <p class="lead">Empowering innovation through smart software and dedicated teams.</p>
+            <a href="#contact" class="btn btn-primary mt-3">Get in Touch</a>
+        </div>
+    </section>
+
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Products</h2>
+            <div class="row g-4">
+
+                <!-- Product 1 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">AI Platform</h5>
+                            <p class="card-text">Our advanced AI platform helps companies automate and scale insights.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-cloud fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">CloudHub</h5>
+                            <p class="card-text">A scalable cloud infrastructure solution tailored for startups and
+                                enterprises.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-tools fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">DevTools Suite</h5>
+                            <p class="card-text">Powerful developer tools to accelerate and streamline your development
+                                workflow.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet the Team</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <img src="assets/images/avatar3.jpg" class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width:150px; height:150px; object-fit:cover;" alt="Alice Johnson">
+                        <div class="card-body">
+                            <h5 class="card-title">Alice Johnson</h5>
+                            <p class="card-text">CEO & Co-founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <img src="assets/images/avatar5.jpg" class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width:150px; height:150px; object-fit:cover;" alt="Mark Rivera">
+                        <div class="card-body">
+                            <h5 class="card-title">Mark Rivera</h5>
+                            <p class="card-text">CTO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <img src="assets/images/avatar6.jpg" class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width:150px; height:150px; object-fit:cover;" alt="Sophie Lee">
+                        <div class="card-body">
+                            <h5 class="card-title">Sophie Lee</h5>
+                            <p class="card-text">Lead Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <img src="assets/images/avatar4.jpg" class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width:150px; height:150px; object-fit:cover;" alt="David Kim">
+                        <div class="card-body">
+                            <h5 class="card-title">David Kim</h5>
+                            <p class="card-text">Head of Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose InnovateX?</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5>Secure by Design</h5>
+                    <p>We prioritize security at every layer to ensure your data and applications are protected 24/7.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-bolt fa-3x text-success mb-3"></i>
+                    <h5>Fast & Scalable</h5>
+                    <p>Our platforms are built to grow with your business, from MVP to global deployment.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-headset fa-3x text-warning mb-3"></i>
+                    <h5>24/7 Support</h5>
+                    <p>Our dedicated team is here to help anytime you need technical assistance or guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">"InnovateX completely transformed our infrastructure. Their team is
+                                top-notch and truly understands our business needs."</p>
+                            <h6 class="mt-3 mb-0">— Clara Thompson, CEO of BrightApps</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">"Their AI tools gave us real-time insights that we never thought
+                                possible. Incredible experience working with them."</p>
+                            <h6 class="mt-3 mb-0">— James Lee, Product Manager at DataWave</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center mb-5">Get Involved</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Jane Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="jane@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5"
+                                placeholder="Tell us how you'd like to get involved..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#products" class="text-white text-decoration-none">Products</a></li>
+                        <li><a href="#team" class="text-white text-decoration-none">Team</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Get Involved</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-md-6 text-md-end">
+                    <h5 class="mb-3">Follow Us</h5>
+                    <div class="d-flex justify-content-start justify-content-md-end gap-3">
+                        <a href="https://facebook.com" class="text-white text-decoration-none" target="_blank">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="https://twitter.com" class="text-white text-decoration-none" target="_blank">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="text-white text-decoration-none" target="_blank">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-white text-decoration-none" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <small>&copy; 2025 InnovateX. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
